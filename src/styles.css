@@ -1,0 +1,135 @@
+/* GENERAL*/
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+a:hover{
+    color: var(--primary-color);
+}
+li{
+    list-style: none;
+}
+img{
+    width:100%;
+    object-fit: cover;
+}
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+}
+#header{
+    position: fixed;
+    top:0; left: 0; right:0;
+    padding: 3rem 0;
+    width: 100%;
+    z-index: 999;
+    transition: 0.3 all ease;
+    background-color:white;
+    padding:0.6rem 1rem 0 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+
+/* HEADER */
+header{
+    position: absolute;
+    padding: 1rem 0;
+    width: 100%;
+    z-index: 999;
+    transition: 0.3 all ease;
+}
+
+header .container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 2rem;
+}
+
+.nav-links{
+    display: flex;
+    flex: 1;
+    margin-left: 7rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-links ul{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 15px;
+}
+.nav-links ul li a{
+    display: block;
+    padding: 20px 0 12px;
+    font-weight: 600;
+
+}
+.nav-links ul li a.active {
+    color : var(--primary-color);
+}
+.nav-links .underline{
+    display: block;
+    width: 50px;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/*RESPONSIVE HEADER*/
+@media (max-width: 991px){
+  header{
+    padding: 1rem;
+    position: fixed; 
+}
+
+.nav-links{
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+    padding: 6rem 1rem 2rem 2rem;
+    transform: translateX(300px);
+    background-color: var(--bg-color);
+    
+} 
+.nav-links.active{
+    transform: translate(0);
+}
+.nav-links ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-links ul li{
+    width: 100%;
+}
+.nav-links ul li a {
+     width: 100%;
+     text-align: center;
+     font-size: 1.5rem;     
+}
+}
